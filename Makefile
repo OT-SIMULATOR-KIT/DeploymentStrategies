@@ -17,7 +17,7 @@ terminate-vm:
 list-vm:
 	echo "Listing VM's"
 	@docker ps --filter "label=vm" --format "{{.Names}}"
-	
+
 run-controlserver:
 	@docker rm -f controlserver || true  > /dev/null
 	@docker run -itd --name controlserver --rm --net opstree -v ${PWD}:/src opstree/vm:1.0
@@ -28,6 +28,7 @@ create-recreate-deployment-setup:
 	make run-vm VM_NAME=vm1
 	make run-vm VM_NAME=vm2
 	make run-vm VM_NAME=vm3
+
 
 cleanup-recreate-deployment-setup:
 	make terminate-vm VM_NAME=controlserver

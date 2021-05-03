@@ -2,6 +2,8 @@
 
 In this repo we will give you a walkthrough of various deployment strategies using Ansible
 
+In this setup we will use nginx as load balancer ant tomcat as application server. Via Nginx we will control various deployment strategies
+
 ## Reference
 * https://thenewstack.io/deployment-strategies/
 
